@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Project7 Yellow Studio</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:300,400,700'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+  <style type=text/css>
+@charset "UTF-8";
+* {
+  font-family: "Oswald", 微軟正黑體;
+}
+
+html, body {
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+header {
+  position: relative;
+  background-color: #282f44;
+  text-align: center;
+}
+header .icon {
+  width: 80%;
+  max-width: 250px;
+  padding: 250px 0px;
+}
+header .marginbottom {
+  position: absolute;
+  width: 95%;
+  bottom: 0px;
+  right: 0px;
+  z-index: 3;
+  -webkit-animation: upin 2s both;
+          animation: upin 2s both;
+}
+@-webkit-keyframes upin {
+  0% {
+    bottom: -100px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+@keyframes upin {
+  0% {
+    bottom: -100px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+header .explore {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #f5d061;
+  top: 85%;
+  opacity: 0;
+  transition: 0.5s;
+}
+header .explore:after {
+  display: block;
+  content: "v";
+  transform: scaleX(1.2) scaleY(0.5);
+}
+header .explore.at_top {
+  opacity: 1;
+}
+
+nav.navbar {
+  transition: 0.5s;
+}
+nav.navbar a {
+  transition: 0.5s;
+}
+
+nav.navbar.at_top {
+  background-color: transparent;
+}
+nav.navbar.at_top a, nav.navbar.at_top a:visited {
+  color: white;
+}
+
+section {
+  padding: 60px;
+  position: relative;
+}
+
+section#section_about {
+  background-color: #E6AF2E;
+}
+section#section_about .container {
+  transform: rotate(15deg) scale(0.9);
+}
+section#section_about .row {
+  height: 150px;
+  color: black;
+}
+section#section_about .row .r1text {
+  font-size: 80px;
+  transition: 0.1s;
+}
+section#section_about .row .r2text {
+  font-size: 35px;
+  transition: 0.2s;
+}
+section#section_about .row .r3text {
+  font-size: 50px;
+  transition: 0.3s;
+  text-align: right;
+}
+section#section_about .cat {
+  width: 30%;
+  max-width: 300px;
+  position: absolute;
+  bottom: -2px;
+  right: 25px;
+}
+section#section_about .marginbottom {
+  position: absolute;
+  width: 60%;
+  top: calc(100% - 2px);
+  z-index: 3;
+}
+section#section_about .btn-area {
+  height: 150px;
+}
+section#section_about a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(10deg);
+}
+section#section_about #cross {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+}
+section#section_about #cross:before, section#section_about #cross:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 15px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+section#section_about #cross:after {
+  transform: translate(-50%, -50%) rotate(136deg);
+}
+section#section_about .tri {
+  transform: rotate(-15deg);
+}
+section#section_about .tri1 {
+  width: 350px;
+}
+section#section_about .tri2 {
+  width: 20px;
+  margin-left: 20px;
+}
+section#section_about .tri3 {
+  width: 150px;
+  margin-left: 70%;
+}
+section#section_about .tri4 {
+  width: 70px;
+  margin-left: 100%;
+}
+section#section_about .tri5 {
+  width: 80px;
+  margin-left: 100%;
+}
+
+section#section_service {
+  background-color: #ececec;
+  padding: 80px 0px;
+}
+section#section_service .col-sm-4 {
+  text-align: center;
+}
+section#section_service h1 {
+  background-color: #282f44;
+  color: #ececec;
+  font-size: 24px;
+  padding: 5px 20px;
+  display: inline-block;
+  font-weight: normal;
+}
+section#section_service h3 {
+  color: #E6AF2E;
+}
+section#section_service .icon_service {
+  width: 60%;
+}
+
+section#section_works {
+  background-color: #ececec;
+  padding-top: 0px;
+}
+section#section_works h1 {
+  background-color: #282f44;
+  color: #ececec;
+  font-size: 24px;
+  padding: 6px 25px;
+  display: inline-block;
+  font-weight: normal;
+}
+section#section_works .marginbottom {
+  position: absolute;
+  width: 90%;
+  right: 0px;
+  top: calc(100% - 2px);
+  z-index: 3;
+  max-width: 900px;
+}
+section#section_works .col-sm-6 {
+  overflow: hidden;
+}
+section#section_works .work {
+  height: 230px;
+  cursor: pointer;
+  position: relative;
+  padding: 5px;
+}
+section#section_works .work.big {
+  height: 460px;
+}
+section#section_works .work:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  z-index: 5;
+  transition: 0.5s;
+}
+section#section_works .work .texts {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  opacity: 0;
+  color: white;
+  transition: 0.5s;
+}
+section#section_works .work .title {
+  line-height: 24px;
+}
+section#section_works .work:hover:before, section#section_works .work:hover .texts {
+  opacity: 1;
+}
+section#section_works .work img {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+section#section_contact {
+  background-color: #282f44;
+  color: white;
+  overflow: hidden;
+}
+section#section_contact .mails {
+  max-width: 500px;
+}
+section#section_contact .mailbody {
+  background-color: #ececec;
+  color: #282f44;
+  padding: 20px;
+  padding-left: 40px;
+  transform: translateX(-30px);
+}
+section#section_contact .mailbody label {
+  margin-top: 10px;
+}
+section#section_contact .mailbody input, section#section_contact .mailbody textarea {
+  display: block;
+  background-color: transparent;
+  border: none;
+  border: solid 3px #282f44;
+  padding: 1px 2px;
+}
+section#section_contact .mailbody textarea {
+  height: 140px;
+  width: 100%;
+}
+section#section_contact .mailcover {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  top: 70%;
+  transform: rotate(5deg) scale(2) translate(-50%, -50%);
+}
+section#section_contact .mailcover img {
+  width: 120%;
+}
+section#section_contact .cat {
+  width: 150px;
+  position: absolute;
+  bottom: 0px;
+  transition: 0.3s;
+}
+section#section_contact #cat_blue {
+  right: 240px;
+  z-index: 3;
+}
+section#section_contact #cat_grey {
+  right: 100px;
+}
+section#section_contact #cat_yellow {
+  right: 170px;
+}
+
+footer#footer {
+  background-color: #E6AF2E;
+  text-align: center;
+}
+footer#footer .icon {
+  width: 80%;
+  max-width: 250px;
+  padding: 80px 0px;
+}
+</style>
+<!-- partial:index.partial.html -->
+<nav class="navbar navbar-default navbar-fixed-top at_top">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#header_index">Yellow Studio</a>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#section_about">About</a></li>
+        <li><a href="#section_works">Works<span class="sr-only">(current)</span></a></li>
+        <li><a href="#section_contact">Contact</a></li>
+      </ul>
+    </div>
+    <!-- /.nav-collapse-->
+  </div>
+</nav>
+<!--首頁-->
+<header id="header_index">
+  <div class="container"><img class="icon" src="http://awiclass.monoame.com/img/webpic/w_icon.svg"/><img class="marginbottom mountain" src="http://awiclass.monoame.com/img/margin/m_index.svg"/></div>
+  <div class="explore at_top">EXPLORE</div>
+</header>
+<!--關於-->
+<section id="section_about">
+  <div class="container">
+    <!--第一行-標題-->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-4"><img class="tri1" src="http://awiclass.monoame.com/img/webpic/w_tri1.svg"/>
+        <h2 class="r1text">WORKS IN YELLOW</h2>
+      </div>
+    </div>
+    <!--第二行-標題跟兩個三角形-->
+    <div class="row">
+      <div class="col-sm-4"><img class="tri2" src="http://awiclass.monoame.com/img/webpic/w_tri2.svg"/></div>
+      <div class="col-sm-8"><img class="tri3" src="http://awiclass.monoame.com/img/webpic/w_tri3.svg"/>
+        <h3 class="r2text">YELLOW STUDIO-Website Design / Development</h3>
+        <h3 class="r2text">Interactive Art Design</h3>
+      </div>
+    </div>
+    <!--第三行-標題-->
+    <div class="row">
+      <div class="col-sm-8">
+        <h2 class="r3text">430 MORE SUCCESS CASES</h2>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <!--第三行-按鈕跟兩個三角形-->
+    <div class="row">
+      <div class="col-sm-4 btn-area"><a class="btn btn-lg btn-default" href="#section_works">MORE STORY</a><img class="tri4" src="http://awiclass.monoame.com/img/webpic/w_tri4.svg"/></div>
+      <div class="col-sm-4"><img class="tri5" src="http://awiclass.monoame.com/img/webpic/w_tri5.svg"/></div>
+    </div>
+  </div>
+  <div id="cross"></div><img class="cat" id="cat" src="http://awiclass.monoame.com/catpic/cat_leftop.png"/><img class="marginbottom" src="http://awiclass.monoame.com/img/margin/m_about.svg"/>
+</section>
+<!--服務-->
+<section id="section_service">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Service</h1>
+      </div>
+      <div class="col-sm-4"><img class="icon_service" src="http://awiclass.monoame.com/img/webpic/w_service_icon1.svg"/>
+        <h3>CI/VI Design</h3>
+      </div>
+      <div class="col-sm-4"><img class="icon_service" src="http://awiclass.monoame.com/img/webpic/w_service_icon2.svg"/>
+        <h3>MotionGraphic</h3>
+      </div>
+      <div class="col-sm-4"><img class="icon_service" src="http://awiclass.monoame.com/img/webpic/w_service_icon3.svg"/>
+        <h3>Web Development</h3>
+      </div>
+    </div>
+  </div>
+</section>
+<!--作品-->
+<section id="section_works"><img class="marginbottom mountain" src="http://awiclass.monoame.com/img/margin/m_works.svg"/>
+  <div class="container" id="app">
+    <div class="row" v-if="works.length&gt;0">
+      <div class="col-sm-12">
+        <h1>Works</h1>
+      </div>
+      <div class="col-sm-6 work big"><img v-bind:src="works[1].img"/>
+        <div class="texts">
+          <h4 class="title">{{works[1].name}}</h4>
+          <p class="content" v-html="works[1].content.substr(0,40)"></p>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="col-sm-6 work" v-for="w in works.slice(2,6)"><img v-bind:src="w.img"/>
+          <div class="texts">
+            <h4 class="title">{{w.name}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--聯絡-->
+<section id="section_contact">
+  <!--三站貓--><img class="cat" id="cat_blue" src="http://awiclass.monoame.com/catpic/cat_blue_cat.png"/><img class="cat" id="cat_grey" src="http://awiclass.monoame.com/catpic/cat_yellow_cat.png"/><img class="cat" id="cat_yellow" src="http://awiclass.monoame.com/catpic/cat_grey_cat.png"/>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <!--信件容器 限制最大寬度-->
+        <div class="mails">
+          <!--信封-->
+          <div class="mailcover"><img src="http://awiclass.monoame.com/img/webpic/w_mail_cover.svg"/></div>
+          <!--信紙-->
+          <div class="mailbody">
+            <h5>Dear Yellow Studio</h5>
+            <label>Name</label>
+            <input/>
+            <label>Email</label>
+            <input/>
+            <label>Content</label>
+            <textarea></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h2>CONTACT</h2><br/>
+        <p>If you have any question about us,<br>Don`t hestitate to contact us !</p><br/><br/>
+        <p>YELLOWSTUDIO@gmail.com<br>ADDRESS: TAIWAN, TAIPEI , XORO Road<br>Phone: 02-12345678</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!--footer-->
+<footer id="footer"><img class="icon" src="http://awiclass.monoame.com/img/webpic/w_icon_black.svg"/></footer>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.js'></script><script  src="./script.js"></script>
+<script>
+//滑動離開頂部時就取消at_top的class
+$(window).scroll(function(e){
+  if ($(window).scrollTop()<=0)
+    $(".navbar,.explore").addClass("at_top");
+  else
+    $(".navbar,.explore").removeClass("at_top");
+});
+
+//緩慢滑動
+$(document).on('click', 'a', function(event){
+    event.preventDefault();
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
+});
+
+//偵測進入貓咪範圍就站起來
+function detect_cat(cat_id,x){
+  var catplace = $(cat_id).offset().left+$(cat_id).width()/2;
+  if (Math.abs(x-catplace)<80)
+    $(cat_id).css("bottom","0px");
+  else
+    $(cat_id).css("bottom","-50px");
+}
+
+//滑鼠移動時觸發的事件
+$(window).mousemove(function(evt){
+  var pagex = evt.pageX;
+  var pagey = evt.pageY;
+  
+  //計算相對區域的位置
+  var x = pagex-$("section#section_about").offset().left;
+  var y = pagey-$("section#section_about").offset().top;
+  
+  //計算現在的y位置超過區域則隱藏
+  if (y<0 ||　y>$("section#section_about").outerHeight())
+    $("#cross").css("opacity",0);
+  else
+    $("#cross").css("opacity",1);
+  
+  // console.log(x);
+  //更動指標位置
+  $("#cross").css("left",x+"px");
+  $("#cross").css("top",y+"px");
+  
+  //計算貓的中心位置
+  var catplace = $("#cat").offset().left +$("#cat").width()/2;
+  var cattop = $("#cat").offset().top;
+  
+  var img_url="http://awiclass.monoame.com/catpic/";
+  
+  //左方 / 右方 / 上方
+  if (pagex<catplace - 50)
+    $("#cat").attr("src",img_url+"cat_left.png");
+  
+  else if (pagex>catplace  + 50)
+    $("#cat").attr("src",img_url+"cat_right.png");
+  
+  else
+    $("#cat").attr("src",img_url+"cat_top.png");
+  
+  //左上 / 右上
+  if (pagex<catplace - 50 && pagey< cattop)
+    $("#cat").attr("src",img_url+"cat_lefttop.png");
+  
+  if (pagex>catplace + 50 && pagey< cattop)
+    $("#cat").attr("src",img_url+"cat_righttop.png");
+    
+  //站起來的貓咪
+  // console.log(x);
+  detect_cat("#cat_yellow",pagex);
+  detect_cat("#cat_blue",pagex);
+  detect_cat("#cat_grey",pagex);
+  
+  //更新一些移動景物的位置
+  $(".mountain").css("transform","translateX("+(x/-20+50)+"px)")
+  
+  //更新簡介中文字的飄浮位置
+  $(".r1text").css("transform","translateX("+y/-5+"px)");
+  $(".r2text").css("transform","translateX("+y/-10+"px)");
+  $(".r3text").css("transform","translateX("+y/-12+"px)");
+  
+   //更新三角形
+  $(".tri1").css("transform",
+                 "translateX("+x/-5+"px) rotate(-15deg)");
+  $(".tri2").css("transform",
+                 "translateX("+x/-10+"px) rotate(-15deg)");
+  $(".tri3").css("transform",
+                 "translateX("+x/-12+"px) rotate(-15deg)");
+  $(".tri4").css("transform",
+                 "translateX("+x/-14+"px) rotate(-15deg)");
+  $(".tri5").css("transform",
+                 "translateX("+x/-16+"px) rotate(-15deg)");
+});
+
+//vue監看物件
+var vm = new Vue({
+  el: "#app",
+  data: {
+    works: []
+  },
+  mounted: function(){
+    var vobj=this;
+    $.ajax({
+      url: "https://awiclass.monoame.com/api/command.php?type=get&name=projects",
+      success: function(res){
+        vobj.works=JSON.parse(res);
+      }
+    });
+  }
+  
+});
+</script>
+</body>
+</html>
